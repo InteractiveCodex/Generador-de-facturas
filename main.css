@@ -1,0 +1,238 @@
+@import url("css/sin-usar.css");
+
+body {
+    font-family: Arial, sans-serif;
+    background: #F8F8F8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Hero */
+.hero {
+    background-color: #0B63E5;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #F8F8F8;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #F8F8F8;
+}
+
+/* Formulario */
+.container {
+    max-width: 600px;
+    padding: 20px 30px;
+    margin: 2rem auto;
+}
+
+form fieldset {
+    border: 1px solid #CCC;
+    margin-bottom: 15px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+fieldset input {
+    flex: 1 1 200px;
+    padding: 6px;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+.concepto-row {
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+    flex-wrap: wrap;
+}
+
+.concepto-row input {
+    flex: 1 1 120px;
+    padding: 6px;
+}
+
+.concepto-row input.totalConcepto {
+    background-color: #eee;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #CCC;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="tel"]:focus {
+    border-color: #E0E7FF;
+    outline: none;
+    box-shadow: 0 0 5px #2563EB;
+}
+
+/* boton */
+button {
+    background-color: #0B63E5;
+    border: none;
+    padding: 12px 24px;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 8px;
+      text-decoration: none;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+        transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Vista previa factura */
+#vista-previa-factura {
+    margin-top: 30px;
+    background: #F8F8F8;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #CCC;
+}
+
+.hidden {
+    display: non;
+}
+
+#contenido-factura {
+    font-family: monospace;
+    white-space: pre-wrap;
+    background: #F8F8F8;
+    padding: 100px;
+    border-radius: 12px;
+    border: 1px solid #CCC;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+.ventajas {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+
+
+}
+
+.ventajas h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ventajas-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    padding: 20px 30px;
+    margin: 2rem auto;
+}
+
+.columna {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.columna h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ventaja-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ventaja-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.icono {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.15rem;
+}
+
+.texto {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .ventajas-contenedor {
+        flex-direction: row;
+    }
+}
+
+
+
+
+.boton-ir-formulario {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #F8F8F8;
+    color: #0B63E5;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-ir-formulario:hover {
+    transform: scale(1.05);
+    /* 5% más grande */
+}
