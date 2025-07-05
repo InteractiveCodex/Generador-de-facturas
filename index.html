@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Generador de facturas en PDF</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  .barra-superior {
+    background-color: #F8F8F8;
+    color: #0B63E5;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+    <div class="barra-superior">
+    ✅ Herramienta 100% gratuita, sin registros ni almacenamiento de datos.
+</div>
+
+    <section class="hero">
+        <h1>Crea facturas online gratis y en segundos</h1>
+        <p>Utiliza el generador de facturas gratuito para crear fácilmente documentos sencillos para tus clientes. Esta
+            una solución simple y eficaz para tus necesidades básicas de facturación.</p>
+        <a href="#formulario" class="boton-ir-formulario">Crear factura ahora</a>
+
+    </section>
+
+    <section class="ventajas">
+        <h2>¿Por qué elegir nuestro generador de facturas?</h2>
+        <div class="ventajas-contenedor">
+            <div class="columna">
+                <h3>Con nuestro generador</h3>
+                <ul class="ventaja-lista">
+                    <li><span class="icono">✅</span><span class="texto">Crea facturas simples y claras en
+                            segundos</span></li>
+                    <li><span class="icono">✅</span><span class="texto">No necesitas registrarte ni compartir tus
+                            datos</span></li>
+                    <li><span class="icono">✅</span><span class="texto">Totalmente gratuito y sin marcas de agua</span>
+                    </li>
+                    <li><span class="icono">✅</span><span class="texto">Cumple los requisitos básicos para ser una
+                            factura válida en España</span></li>
+                    <li><span class="icono">✅</span><span class="texto">Ideal para autónomos que quieren rapidez y
+                            control</span></li>
+                    <li><span class="icono">✅</span><span class="texto">No almacenamos tus datos, máxima
+                            privacidad</span></li>
+                </ul>
+            </div>
+
+            <div class="columna">
+                <h3>Otras herramientas</h3>
+                <ul class="ventaja-lista">
+                    <li><span class="icono">❌</span><span class="texto">Suelen requerir registro y ceden tus datos a
+                            terceros</span></li>
+                    <li><span class="icono">❌</span><span class="texto">Pueden tener marcas de agua o versiones
+                            limitadas</span></li>
+                    <li><span class="icono">❌</span><span class="texto">Almacenan tus datos en sus servidores</span>
+                    </li>
+                    <li><span class="icono">❌</span><span class="texto">No están diseñadas específicamente para
+                            autónomos</span></li>
+                    <li><span class="icono">❌</span><span class="texto">Requieren pagos para exportar PDF sin
+                            limitaciones</span></li>
+                    <li><span class="icono">❌</span><span class="texto">Pueden ser complejas para quienes solo necesitan
+                            lo básico</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <div class="container">
+        <h1 id="formulario" style="padding-top: 2rem;">Genera tu factura rellenando este formulario</h1>
+
+
+
+
+        <form id="formulario-factura">
+            <fieldset>
+                <legend>Datos de la empresa</legend>
+                <input type="text" id="nombreFreelancer" placeholder="Nombre*" required />
+                <input type="text" id="nifFreelancer" placeholder="DNI*" required />
+                <input type="text" id="direccionFreelancer" placeholder="Dirección*" required />
+                <input type="text" id="cpFreelancer" placeholder="Código Postal*" required />
+                <input type="text" id="ciudadFreelancer" placeholder="Ciudad*" required />
+                <input type="text" id="provinciaFreelancer" placeholder="Provincia*" required />
+                <input type="tel" id="telefonoFreelancer" placeholder="Teléfono*" required />
+                <input type="email" id="correoFreelancer" placeholder="Correo electrónico*" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos del Cliente</legend>
+                <input type="text" id="nombreCliente" placeholder="Nombre*" required />
+                <input type="text" id="dniCliente" placeholder="DNI*" required />
+                <input type="text" id="direccionCliente" placeholder="Dirección*" required />
+                <input type="text" id="ciudadCliente" placeholder="Ciudad*" required />
+                <input type="text" id="provinciaCliente" placeholder="Provincia*" required />
+                <input type="text" id="cpCliente" placeholder="Código Postal*" required />
+                <input type="tel" id="telefonoCliente" placeholder="Teléfono*" required />
+                <input type="email" id="correoCliente" placeholder="Correo electrónico*" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Concepto</legend>
+                <div id="conceptos-container">
+                    <div class="concepto-row">
+                        <input type="text" class="nombreConcepto" placeholder="Nombre*" required />
+                        <input type="number" class="cantidadConcepto" placeholder="Cantidad*" required min="1" />
+                        <input type="number" class="precioConcepto" placeholder="Precio*" required min="0"
+                            step="0.01" />
+                        <input type="number" class="totalConcepto" placeholder="Total" readonly />
+                    </div>
+                </div>
+                <button type="button" id="agregar-concepto">Agregar concepto</button>
+            </fieldset>
+
+            <button type="submit">Generar Factura PDF</button>
+        </form>
+
+        <div id="vista-previa-factura" class="hidden">
+            <h2>Vista previa de la factura</h2>
+            <pre id="contenido-factura"></pre>
+            <button id="boton-descargar-pdf">Descargar PDF</button>
+        </div>
+
+        <p class="privacidad-aviso">
+            Esta herramienta no guarda ni comparte la información que introduces. Consulta nuestra <a
+                href="politica-privacidad.html" target="_blank">Política de Privacidad</a>.</p>
+
+    </div>
+
+    <!-- jsPDF y AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
